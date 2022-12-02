@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ScheduleController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -39,5 +40,9 @@ Route::prefix('schedule')->group(function(){
 
 Route::prefix('booking')->group(function(){
     Route::get('/', [BookingController::class, 'index'])->name('booking.index');
+});
+
+Route::prefix('landing')->group(function(){
+    Route::get('/', [LandingController::class, 'index'])->name('landing.index');
 });
 
